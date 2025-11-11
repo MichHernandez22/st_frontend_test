@@ -1,0 +1,31 @@
+/* src/components/DragDropContainer/DragDropContainer.css */
+.drag-drop-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.list-container {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 500px;
+}
+
+.list-container h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.droppable-area {
+  min-height: 400px;
+  transition: background-color 0.2s ease;
+}
+
+.droppable-area.dragging-over {
+  background-color: #e3f2fd;
+  border-radius: 4px;
+}
