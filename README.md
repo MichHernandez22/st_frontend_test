@@ -62,33 +62,34 @@ src/
    npm run dev
    http://localhost:5173
 
-Comandos Adicionales
-# Construir para producción
+## Comandos Adicionales
+
+### Construir para producción
 npm run build
 
-# Vista previa de la build de producción
+### Vista previa de la build de producción
 npm run preview
 
-Uso de la Aplicación
+# Uso de la Aplicación
 
-Gestión de Usuarios
+## Gestión de Usuarios
 Ver usuarios: Los usuarios cargan automáticamente desde la API
 Agregar usuarios: Usa el formulario en la barra lateral
 Organizar usuarios: Arrastra y suelta entre "Lista General" y "Grupo Seleccionado"
 Ver detalles: Haz click en cualquier usuario para ver información completa
 
-Características del Formulario
+## Características del Formulario
 -Validación en tiempo real
 -Campos obligatorios y opcionales
 -Feedback visual al enviar
 -Diseño responsive
 
-Drag & Drop
+## Drag & Drop
 -Arrastre intuitivo con feedback visual
 -Persistencia automática de cambios
 -Indicadores de zona de drop
 
-Decisiones Técnicas
+# Decisiones Técnicas
 Estado Global: Context API vs Redux
 Elección: Context API
 Razón:
@@ -112,27 +113,27 @@ Beneficios:
   Detección temprana de errores
   Código más mantenible
 
-Características de UX/UI
-Diseño Responsive
+# Características de UX/UI
+## Diseño Responsive
 -Grid layouts flexibles
 
-Estados de Interfaz
+## Estados de Interfaz
 Error: Manejo elegante de errores
 Éxito: Confirmaciones visuales
 Vacío: Estados para listas vacías
 
-Animaciones y Transiciones
+## Animaciones y Transiciones
 -Transiciones suaves entre estados
 -Animaciones de drag & drop
 -Efectos hover y focus
 
-Próximas Mejoras
+# Próximas Mejoras
 -Tests unitarios con Jest y React Testing Library
 -Tests de integración
 -CI/CD pipeline
 -Mobile-first approach
 
-Autor
+#  Autor
 <p>
   <strong>Ana Michelle Lopez Hernandez</strong><br>
   <a href="https://github.com/MichHernandez22" target="_blank">GitHub</a>
