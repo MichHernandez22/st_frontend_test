@@ -1,0 +1,151 @@
+/* src/pages/UserDetail/UserDetail.css actualizado */
+.user-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.user-detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.user-detail-header h1 {
+  margin: 0;
+  color: white;
+}
+
+.back-button {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background: #5a6268;
+}
+
+.user-detail-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.user-profile-section {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.user-detail-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-right: 2rem;
+}
+
+.user-basic-info h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  color: black;
+}
+
+.user-basic-info .user-email {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.user-badges {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.badge-male {
+  background: #007bff;
+  color: white;
+}
+
+.badge-female {
+  background: #e83e8c;
+  color: white;
+}
+
+.badge-other {
+  background: #6f42c1;
+  color: white;
+}
+
+.badge-location {
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  backdrop-filter: blur(10px);
+}
+
+.detail-section h3 {
+  margin: 0 0 1rem 0;
+  color: white;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+}
+
+.detail-item strong {
+  color: white;
+  font-weight: 600;
+}
+
+.detail-item span {
+  color: #333;
+  text-align: right;
+}
+
+.user-id {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.875rem;
+  background: #f8f9fa;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.error-container {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-container h2 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}

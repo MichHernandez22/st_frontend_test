@@ -6,6 +6,7 @@ import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element
 import { combine } from '@atlaskit/pragmatic-drag-and-drop/combine';
 import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import '../../styles/DragDropContainer.css';
+import { useNavigate } from "react-router-dom";
 
 const DragUserItem: React.FC<{
     user:User;
@@ -86,9 +87,10 @@ const DropZone: React.FC<{
 
 export const DragDropContainer: React.FC = () => {
     const {state} = useUserContext();
+    const navigate = useNavigate();
 
     const handleUserClick = (user: User) => {
-        alert(`Usuario seleccionado: ${user.name.first} ${user.name.last}`);
+        navigate(`/user/${user.id}`);
     };
 
     return (
