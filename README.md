@@ -117,9 +117,7 @@ Beneficios:
 
 🎨 Características de UX/UI
 Diseño Responsive
-✅ Mobile-first approach
 ✅ Grid layouts flexibles
-✅ Breakpoints optimizados
 
 Estados de Interfaz
 Error: Manejo elegante de errores
@@ -135,19 +133,20 @@ Próximas Mejoras
 Tests unitarios con Jest y React Testing Library
 Tests de integración
 CI/CD pipeline
+Mobile-first approach
 
 👨‍💻 Autor
-<p align="center">
+<p>
   <strong>Ana Michelle Lopez Hernandez</strong><br>
   <a href="https://github.com/MichHernandez22" target="_blank">GitHub</a>
 </p>
 
 🔗 Enlaces
-<p align="center">
+<p>
   <strong>Repositorio</strong><br>
   <a href="https://github.com/MichHernandez22/st_frontend_test.git" target="_blank">GitHub Repository</a>
 </p>
-<p align="center">
+<p>
   <strong>Demo</strong><br>
-  <a href="https://github.com/MichHernandez22/st_frontend_test.git" target="_blank">Live Demo</a>
+  <a href="https://st-frontend-test-red.vercel.app/" target="_blank">Live Demo</a>
 </p>
