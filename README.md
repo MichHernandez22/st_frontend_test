@@ -2,22 +2,22 @@
 
 Una aplicación moderna de gestión de usuarios construida con React, TypeScript y Pragmatic Drag & Drop que consume una API pública y permite gestionar usuarios de manera intuitiva.
 
-## 🚀 Características Implementadas
+## Características Implementadas
 
-### ✅ Requisitos Principales
+### Requisitos Principales
 - **Consumo de API pública** - Integración con Random User API
 - **Estado Global** - Context API con TypeScript
 - **Alta de nuevos usuarios** - Formulario completo con validación
 - **Drag & Drop** - Entre listas usando Pragmatic Drag and Drop
 - **Detalle del usuario** - Navegación con React Router
 
-### 🎯 Puntos Extra Implementados
+### Puntos Extra Implementados
 - **Persistencia local** - Los datos persisten al recargar la página
 - **TypeScript** - Código completamente tipado
 - **Mejoras de UX** - Loaders, animaciones, feedback visual, diseño responsive
 - **Deployment** - Preparado para Vercel/Netlify
 
-## 🛠 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **React 18** - Biblioteca principal
 - **TypeScript** - Tipado estático para mayor seguridad
@@ -27,7 +27,7 @@ Una aplicación moderna de gestión de usuarios construida con React, TypeScript
 - **CSS3** - Estilos modernos con Grid, Flexbox y animaciones
 - **LocalStorage API** - Persistencia de datos local
 
-## 📦 Estructura del Proyecto
+## Estructura del Proyecto
 src/
 ├── components/
 │ ├── DragDropContainer/ # Componente de drag & drop
@@ -46,7 +46,7 @@ src/
 └── styles/ # Estilos globales
 
 
-## 🚀 Instalación y Ejecución
+## Instalación y Ejecución
 
 ### Prerrequisitos
 - Node.js 16+ 
@@ -69,10 +69,7 @@ npm run build
 # Vista previa de la build de producción
 npm run preview
 
-# Ejecutar linter (si está configurado)
-npm run lint
-
-🎮 Uso de la Aplicación
+Uso de la Aplicación
 
 Gestión de Usuarios
 Ver usuarios: Los usuarios cargan automáticamente desde la API
@@ -81,17 +78,17 @@ Organizar usuarios: Arrastra y suelta entre "Lista General" y "Grupo Seleccionad
 Ver detalles: Haz click en cualquier usuario para ver información completa
 
 Características del Formulario
-✅ Validación en tiempo real
-✅ Campos obligatorios y opcionales
-✅ Feedback visual al enviar
-✅ Diseño responsive
+-Validación en tiempo real
+-Campos obligatorios y opcionales
+-Feedback visual al enviar
+-Diseño responsive
 
 Drag & Drop
-✅ Arrastre intuitivo con feedback visual
-✅ Persistencia automática de cambios
-✅ Indicadores de zona de drop
+-Arrastre intuitivo con feedback visual
+-Persistencia automática de cambios
+-Indicadores de zona de drop
 
-🔧 Decisiones Técnicas
+Decisiones Técnicas
 Estado Global: Context API vs Redux
 Elección: Context API
 Razón:
@@ -115,9 +112,9 @@ Beneficios:
   Detección temprana de errores
   Código más mantenible
 
-🎨 Características de UX/UI
+Características de UX/UI
 Diseño Responsive
-✅ Grid layouts flexibles
+-Grid layouts flexibles
 
 Estados de Interfaz
 Error: Manejo elegante de errores
@@ -125,17 +122,17 @@ Error: Manejo elegante de errores
 Vacío: Estados para listas vacías
 
 Animaciones y Transiciones
-✅ Transiciones suaves entre estados
-✅ Animaciones de drag & drop
-✅ Efectos hover y focus
+-Transiciones suaves entre estados
+-Animaciones de drag & drop
+-Efectos hover y focus
 
 Próximas Mejoras
-Tests unitarios con Jest y React Testing Library
-Tests de integración
-CI/CD pipeline
-Mobile-first approach
+-Tests unitarios con Jest y React Testing Library
+-Tests de integración
+-CI/CD pipeline
+-Mobile-first approach
 
-👨‍💻 Autor
+Autor
 <p>
   <strong>Ana Michelle Lopez Hernandez</strong><br>
   <a href="https://github.com/MichHernandez22" target="_blank">GitHub</a>
