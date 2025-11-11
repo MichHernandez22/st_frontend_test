@@ -37,7 +37,7 @@ export const UserDetail: React.FC = () => {
                     <p className='user-email'>{user.email}</p>
                     <div className='user-badges'>
                         <span className={`badge badge-${user.gender}`}>{user.gender === 'male' ? 'Masculino' : user.gender === 'female' ? 'Femenino' : 'Otro'}</span>
-                        <span className="badge badge-location">{user.location.street.number} {user.location.street.name}, {user.location.city}, {user.location.state}, {user.location.country}, {user.location.postcode}</span>
+                        <span className="badge badge-location"> {user.location.city}, {user.location.state}, {user.location.country}</span>
                     </div>
                 </div>              
             </div>

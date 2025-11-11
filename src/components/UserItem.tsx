@@ -1,6 +1,6 @@
 import React from "react";
-import { User } from "../../types";
-import '../../styles/UserItem.css';
+import { User } from "../types";
+import '../styles/UserItem.css';
 
 interface UserItemProps {
     user: User;
@@ -18,7 +18,7 @@ export const UserItem: React.FC<UserItemProps> = ({ user, onUserClick, isDraggin
         <div className={`user-item ${isDragging ? 'dragging' : ''}`} onClick={handleClick}>
             <img src={user.picture.thumbnail} className="user-avatar" />
             <div className="user-info">
-                <h3 className="user-name">{`${user.name.title} ${user.name.first} ${user.name.last}`}</h3>
+                <h3 className="user-name">{`${user.name.title ? user.name.title : ''} ${user.name.first} ${user.name.last}`}</h3>
                 <p className="user-email">{user.email}</p>
             </div>
             <div className="item-actions">

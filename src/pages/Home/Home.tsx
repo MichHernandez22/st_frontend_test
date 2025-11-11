@@ -1,7 +1,9 @@
 import React from 'react';
-import { DragDropContainer } from '../../components/DragDropContainer/DragDropContainer';
-import { Loading } from '../../components/Loading/Loading';
+import { DragDropContainer } from '../../components/DragDropContainer';
+import { Loading } from '../../components/Loading';
 import { useUserContext } from '../../contexts/UserContext';
+import { UserForm } from '../../components/UserForm';
+import '../../styles/Home.css';
 
 export const Home: React.FC = () => {
     const { loading, error } = useUserContext();
@@ -13,14 +15,20 @@ export const Home: React.FC = () => {
     if (error) {
         return <div>Error al cargar los usuarios.</div>;
     }
-    
+
     return (
         <div>
-            <header>
+            <header className='page-header'>
                 <h1>Gestion de Usuarios</h1>
             </header>   
-            <div>
-                <DragDropContainer/>
+            <div className="page-content">
+                <aside className="sidebar">
+                    <UserForm />
+                </aside>
+        
+                <main className="main-content">
+                    <DragDropContainer />
+                </main>
             </div>
         </div>
     );

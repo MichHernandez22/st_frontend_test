@@ -28,3 +28,18 @@ export interface UserState {
     generalUsers: User[];
     selectedUsers: User[];
 }
+
+export interface NewUser{
+    name:{
+        first: string;
+        last: string;
+    };
+    email: string;
+    gender: string;
+    picture?:string;
+    location:{
+        city:string;
+        country:string;
+        state:string;
+    }
+}

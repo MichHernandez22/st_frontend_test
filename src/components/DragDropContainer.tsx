@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from "react";
-import { User } from "../../types";
-import { UserItem } from "../UserItem/UserItem";
-import { useUserContext } from "../../contexts/UserContext";
+import { User } from "../types";
+import { UserItem } from "./UserItem";
+import { useUserContext } from "../contexts/UserContext";
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import { combine } from '@atlaskit/pragmatic-drag-and-drop/combine';
 import { draggable } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import '../../styles/DragDropContainer.css';
+import '../styles/DragDropContainer.css';
 import { useNavigate } from "react-router-dom";
 
 const DragUserItem: React.FC<{
