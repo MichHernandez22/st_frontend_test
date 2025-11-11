@@ -133,7 +133,7 @@ Vacío: Estados para listas vacías
 -CI/CD pipeline
 -Mobile-first approach
 
-#  Autor
+## Autor
 <p>
   <strong>Ana Michelle Lopez Hernandez</strong><br>
   <a href="https://github.com/MichHernandez22" target="_blank">GitHub</a>
