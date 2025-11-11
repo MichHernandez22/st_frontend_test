@@ -1,7 +1,7 @@
 // src/components/UserForm/UserForm.tsx
 import React, { useState } from 'react';
 import { useUserContext } from '../contexts/UserContext';
-import { NewUser } from '../types';
+import { NewUser, User } from '../types';
 import '../styles/UserForm.css';
 
 export const UserForm: React.FC = () => {
@@ -23,14 +23,30 @@ export const UserForm: React.FC = () => {
     // Simular una pequeña demora para mejor UX
     await new Promise(resolve => setTimeout(resolve, 500));
     
-    const newUser = {
+    const newUser: User = {
       id: Math.random().toString(36).substr(2, 9),
-      ...formData,
+      gender: formData.gender,
+      name: {
+        title: '',
+        first: formData.name.first,
+        last: formData.name.last,
+      },
+      email: formData.email,
+      location: {
+        street: {
+          number: '',
+          name: '',
+        },
+        city: formData.location.city,
+        state: formData.location.state,
+        country: formData.location.country,
+        postcode: '',
+      },
       picture: {
-        thumbnail: formData.picture || 'https://via.placeholder.com/150',
-        medium: formData.picture || 'https://via.placeholder.com/150',
-        large: formData.picture || 'https://via.placeholder.com/150'
-      }
+        thumbnail: formData.picture || 'https://picsum.photos/150',
+        medium: formData.picture || 'https://picsum.photos/150',
+        large: formData.picture || 'https://picsum.photos/150',
+      },
     };
 
     dispatch({ type: 'ADD_USER', payload: newUser });

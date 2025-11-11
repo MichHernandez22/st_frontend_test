@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useReducer, useEffect } from "react";
+import React, { createContext, useContext, useReducer, useEffect, useState } from "react";
 import { User, UserState } from "../types";
-import { useUsers } from "../hooks/useUsers";
 
 interface UserContextType {
     state: UserState;
@@ -47,30 +46,79 @@ const initialState: UserState = {
 
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [state, dispatch] = useReducer(userReducer, initialState);
-    const { users, loading, error } = useUsers();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+    const [isInitialized, setIsInitialized] = useState(false);
 
-    //Efecto para cargar usuarios iniciales
-    useEffect(() => {
-        if (users.length > 0) {
-            dispatch({ type: 'SET_USERS', payload: users });
-        }
-    }, [users]);
-
-    //Persistencia con localStorage
-    useEffect(() => {
+    //Efecto para carga inicial - SOLO UNA VEZ al montar
+  useEffect(() => {
+    const initializeApp = async () => {
+      try {
+        setLoading(true);
+        
+        //Primero intentar cargar desde localStorage
         const savedState = localStorage.getItem('userState');
+        
         if (savedState) {
-            const parsedState = JSON.parse(savedState);
-            //Solo carga estado si no tenemos usuarios ya cargados de la api
-            if(state.generalUsers.length === 0){
-                dispatch({ type: 'LOAD_STATE', payload: parsedState });
-            }
+          const parsedState = JSON.parse(savedState);
+          // Verificar que el estado guardado tiene la estructura correcta
+          if (parsedState && parsedState.generalUsers && parsedState.selectedUsers) {
+            dispatch({ type: 'LOAD_STATE', payload: parsedState });
+            setIsInitialized(true);
+            setLoading(false);
+            return; //Salir si cargamos datos guardados
+          }
         }
-    }, []);
+        
+        // Si no hay datos guardados, cargar desde la API
+        const response = await fetch('https://randomuser.me/api/?results=10');
+        const data = await response.json();
+        
+        const formattedUsers: User[] = data.results.map((user: any) => ({
+          id: user.login.uuid,
+          name: {
+            first: user.name.first,
+            last: user.name.last
+          },
+          email: user.email,
+          picture: {
+            thumbnail: user.picture.thumbnail,
+            medium: user.picture.medium,
+            large: user.picture.large
+          },
+          location: {
+            city: user.location.city,
+            state: user.location.state,
+            country: user.location.country
+          },
+          gender: user.gender
+        }));
 
-    useEffect(() => {
+        dispatch({ type: 'SET_USERS', payload: formattedUsers });
+        setError(null);
+      } catch (err) {
+        setError('Error al cargar los usuarios');
+        console.error('Error al cargar los usuarios:', err);
+      } finally {
+        setLoading(false);
+        setIsInitialized(true);
+      }
+    };
+
+    initializeApp();
+  }, []); //Solo se ejecuta una vez al montar
+
+  // Efecto para guardar en localStorage - SOLO cuando el estado cambia Y está inicializado
+  useEffect(() => {
+    if (isInitialized && state.generalUsers.length > 0) {
+      try {
         localStorage.setItem('userState', JSON.stringify(state));
-    }, [state]);
+      } catch (err) {
+        console.error('Error salvando informacion en localStorage:', err);
+      }
+    }
+  }, [state, isInitialized]); // Se ejecuta cuando el estado cambia
+
     
     return (
         <UserContext.Provider value={{state, dispatch, loading, error}}>

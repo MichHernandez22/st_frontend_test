@@ -1,73 +1,153 @@
-# React + TypeScript + Vite
+# Prueba Técnica - Desarrollador Frontend (React) 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación moderna de gestión de usuarios construida con React, TypeScript y Pragmatic Drag & Drop que consume una API pública y permite gestionar usuarios de manera intuitiva.
 
-Currently, two official plugins are available:
+## 🚀 Características Implementadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### ✅ Requisitos Principales
+- **Consumo de API pública** - Integración con Random User API
+- **Estado Global** - Context API con TypeScript
+- **Alta de nuevos usuarios** - Formulario completo con validación
+- **Drag & Drop** - Entre listas usando Pragmatic Drag and Drop
+- **Detalle del usuario** - Navegación con React Router
 
-## React Compiler
+### 🎯 Puntos Extra Implementados
+- **Persistencia local** - Los datos persisten al recargar la página
+- **TypeScript** - Código completamente tipado
+- **Mejoras de UX** - Loaders, animaciones, feedback visual, diseño responsive
+- **Deployment** - Preparado para Vercel/Netlify
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React 18** - Biblioteca principal
+- **TypeScript** - Tipado estático para mayor seguridad
+- **React Router DOM** - Navegación entre páginas
+- **Pragmatic Drag and Drop** - Librería moderna de drag & drop
+- **Context API** - Estado global de la aplicación
+- **CSS3** - Estilos modernos con Grid, Flexbox y animaciones
+- **LocalStorage API** - Persistencia de datos local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Estructura del Proyecto
+src/
+├── components/
+│ ├── DragDropContainer/ # Componente de drag & drop
+│ ├── UserCard/ # Tarjeta de usuario
+│ ├── UserForm/ # Formulario de nuevo usuario
+│ └── Loading/ # Componente de carga
+├── contexts/
+│ └── UserContext.tsx # Estado global con Context API
+├── hooks/
+│ └── useUsers.ts # Custom hook para consumir API
+├── pages/
+│ ├── Home/ # Página principal
+│ └── UserDetail/ # Página de detalle
+├── types/
+│ └── index.ts # Definiciones TypeScript
+└── styles/ # Estilos globales
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Instalación y Ejecución
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerrequisitos
+- Node.js 16+ 
+- npm o yarn
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Pasos para ejecutar localmente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/MichHernandez22/st_frontend_test.git
+   cd st_frontend_test
+   npm install
+   npm run dev
+   http://localhost:5173
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Comandos Adicionales
+# Construir para producción
+npm run build
+
+# Vista previa de la build de producción
+npm run preview
+
+# Ejecutar linter (si está configurado)
+npm run lint
+
+🎮 Uso de la Aplicación
+
+Gestión de Usuarios
+Ver usuarios: Los usuarios cargan automáticamente desde la API
+Agregar usuarios: Usa el formulario en la barra lateral
+Organizar usuarios: Arrastra y suelta entre "Lista General" y "Grupo Seleccionado"
+Ver detalles: Haz click en cualquier usuario para ver información completa
+
+Características del Formulario
+✅ Validación en tiempo real
+✅ Campos obligatorios y opcionales
+✅ Feedback visual al enviar
+✅ Diseño responsive
+
+Drag & Drop
+✅ Arrastre intuitivo con feedback visual
+✅ Persistencia automática de cambios
+✅ Indicadores de zona de drop
+
+🔧 Decisiones Técnicas
+Estado Global: Context API vs Redux
+Elección: Context API
+Razón:
+  Suficiente para la complejidad de esta aplicación
+  Menos boilerplate que Redux
+  Integración nativa con React
+  Mejor para aplicaciones de tamaño medio
+
+Drag & Drop: Pragmatic Drag and Drop vs React Beautiful DnD
+Elección: Pragmatic Drag and Drop
+Razón:
+  Más moderno y con mayor soporte
+  Mejor rendimiento
+  API más limpia y directa
+  Mejor soporte para React 18
+
+TypeScript
+Beneficios:
+  Mayor seguridad en el desarrollo
+  Mejor autocompletado
+  Detección temprana de errores
+  Código más mantenible
+
+🎨 Características de UX/UI
+Diseño Responsive
+✅ Mobile-first approach
+✅ Grid layouts flexibles
+✅ Breakpoints optimizados
+
+Estados de Interfaz
+Error: Manejo elegante de errores
+Éxito: Confirmaciones visuales
+Vacío: Estados para listas vacías
+
+Animaciones y Transiciones
+✅ Transiciones suaves entre estados
+✅ Animaciones de drag & drop
+✅ Efectos hover y focus
+
+Próximas Mejoras
+Tests unitarios con Jest y React Testing Library
+Tests de integración
+CI/CD pipeline
+
+👨‍💻 Autor
+<p align="center">
+  <strong>Ana Michelle Lopez Hernandez</strong><br>
+  <a href="https://github.com/MichHernandez22" target="_blank">GitHub</a>
+</p>
+
+🔗 Enlaces
+<p align="center">
+  <strong>Repositorio</strong><br>
+  <a href="https://github.com/MichHernandez22/st_frontend_test.git" target="_blank">GitHub Repository</a>
+</p>
+<p align="center">
+  <strong>Demo</strong><br>
+  <a href="https://github.com/MichHernandez22/st_frontend_test.git" target="_blank">Live Demo</a>
+</p>

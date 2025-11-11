@@ -56,11 +56,10 @@ const DropZone: React.FC<{
                 getData: () => ({ listType }),
                 onDragEnter: () => setIsDragOver(true),
                 onDragLeave: () => setIsDragOver(false),
-                onDrop:({source, location}) => {
-                    const data = source.data;
+                onDrop: ({ source }) => {
+                    const data = source.data as { user: User; listType: 'general' | 'selected' };
                     console.log('Dropped data:', data);
-                    if(data.user && data.listType !== listType) {
-                        console.log(`Moving user ${data.user.id} to ${listType} list`);
+                    if (data.user && data.listType !== listType) {
                         dispatch({ type: 'MOVE:USER', payload: { userId: data.user.id, toList: listType } });
                     }
                 }
